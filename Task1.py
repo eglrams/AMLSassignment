@@ -15,14 +15,14 @@ import glob
 #args = vars(ap.parse_args())
 
 # Load cascade classifier for face
-face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_alt2.xml')
 
 # initialise data set for upload to csv file
 csvData = []
 
 #  Perform classification
 def faceClass(image):
-     faces = face_cascade.detectMultiScale(image, 1.1, 5)
+     faces = face_cascade.detectMultiScale(image, 1.05, 3)
      #for (x,y,w,h) in faces:
           #cv2.rectangle(image,(x,y),(x+w,y+h),(255,0,0),2)
      #cv2.imshow('image',image)
