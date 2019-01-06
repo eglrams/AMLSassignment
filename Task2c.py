@@ -16,7 +16,7 @@ test_dir = 'testImages'
 img_size = 64
 lr = 1e-3
 
-model_name = 'GlassesVsNoGlasses-{}-{}.model'.format(lr, '6convolutionsCNN')
+model_name = 'GlassesVsNoGlasses-{}-{}.model'.format(lr, 'ModelCNN')
 
 if __name__ == '__main__':
     if os.path.exists('traindata2.npy'):
@@ -25,7 +25,7 @@ if __name__ == '__main__':
         train_data = create_train_data(2) # attribute label = 4 (old/young column)
 
     # Build CNN from tensorflow and tflearn libraries
-    # 2 layer  CNN with fully connected layer and output layer
+    # CNN with 6 convolution layers and one fully connected layer
 
     import tflearn
     from tflearn.layers.conv import conv_2d, max_pool_2d
@@ -59,7 +59,7 @@ if __name__ == '__main__':
 
     cnn = fully_connected(cnn, 1024, activation='tanh') #fully connected layer
     cnn = dropout(cnn, 0.6)
-
+    
     cnn = fully_connected(cnn, 2, activation='softmax') # output layer
     cnn = regression(cnn, optimizer='adam', learning_rate=lr, loss='categorical_crossentropy', name='targets') # Classes are mutually exclusive, loss selection is appropriate
 

@@ -3,8 +3,6 @@
 # Description: Creating functions for building training and test data, building CNN for 
 # smile vs no smile binary classification and running prediction.
 
-
-
 import cv2
 import tensorflow
 import numpy as np
@@ -17,7 +15,7 @@ test_dir = 'testImages'
 img_size = 64
 lr = 1e-3
 
-model_name = 'smilevsnosmile-{}-{}.model'.format(lr, '6convolutionsCNN')
+model_name = 'smilevsnosmile-{}-{}.model'.format(lr, 'ModelCNN')
 
 ##############################################################################################################
 
@@ -75,7 +73,7 @@ if __name__ == '__main__':
         train_data = create_train_data(3) # attribute label = 3 (smile column)
 
     # Build CNN from tensorflow and tflearn libraries
-    # 2 layer  CNN with fully connected layer and output layer
+    # CNN with 6 convolution layers and one fully connected layer
 
     import tflearn
     from tflearn.layers.conv import conv_2d, max_pool_2d

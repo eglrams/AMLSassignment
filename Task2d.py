@@ -16,7 +16,7 @@ test_dir = 'testImages'
 img_size = 64
 lr = 1e-3
 
-model_name = 'HumanVsCartoon-{}-{}.model'.format(lr, '6convolutionsCNN')
+model_name = 'HumanVsCartoon-{}-{}.model'.format(lr, 'ModelCNN')
 
 if __name__ == '__main__':
     if os.path.exists('traindata5.npy'):
@@ -25,7 +25,7 @@ if __name__ == '__main__':
         train_data = create_train_data(5) # attribute label = 4 (old/young column)
 
     # Build CNN from tensorflow and tflearn libraries
-    # 2 layer  CNN with fully connected layer and output layer
+    # CNN with 6 convolution layers and one fully connected layer
 
     import tflearn
     from tflearn.layers.conv import conv_2d, max_pool_2d
