@@ -1,18 +1,14 @@
-# Task1.py - Reads in image and detects faces. If faces are present, they are saved into a new directory.
+# Filename: Task1.py
+# Author: Etienne Ramsay
+# Description: Reads in image and detects faces.
+# If faces are present, they are saved into a new directory.
 
 import numpy as np
 import cv2
-import argparse
 import csv
 import os
 import glob
 
-# Argument Parser
-
-#ap = argparse.ArgumentParser()
-#ap.add_argument("-i", "--image", required=True,
-#	help="path to input image")
-#args = vars(ap.parse_args())
 
 # Load cascade classifier for face
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_alt2.xml')
@@ -23,18 +19,9 @@ csvData = []
 #  Perform classification
 def faceClass(image):
      faces = face_cascade.detectMultiScale(image, 1.05, 3)
-     #for (x,y,w,h) in faces:
-          #cv2.rectangle(image,(x,y),(x+w,y+h),(255,0,0),2)
-     #cv2.imshow('image',image)
-     #cv2.waitKey(0)
      print('Faces found: ',len(faces))
      return len(faces)
 
-# Read in image
-#def readImage(image):
-     #greyImg = cv2.imread(image, 0)
-     #gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-     #return greyImg
 
 img_dir = "dataset" # Enter Directory of all images 
 data_path = os.path.join(img_dir,'*g')

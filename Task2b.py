@@ -56,7 +56,7 @@ if __name__ == '__main__':
 
     cnn = conv_2d(cnn, 64, 2, activation='tanh')
     cnn = max_pool_2d(cnn, 2)
-
+    
     cnn = fully_connected(cnn, 1024, activation='tanh') #fully connected layer
     cnn = dropout(cnn, 0.6)
 
