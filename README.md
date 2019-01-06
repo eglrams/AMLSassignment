@@ -1,9 +1,15 @@
 # AMLSassignment
 
+There are several libraries which need to be installed to run the files in this repository:
+numpy
+opencv
+tensorflow
+tflearn
+
 Start with running 'Task1.py'. This performs the noisy image removal.
 
 The training and testing images should be moved manually into directories 'trainImages' and 'testImages'. 80% is training data and 
-20% is testing data
+20% is testing data. I used the ;ast 20% of the images as test data.
 
 The files 'Task2.py', 'Task2b.py', 'Task2c.py', 'Task2d.py' are the binary classification tasks in order: smile/no smile, young/old,
 glasses/no glasses, human/cartoon. These can be run in any order. These files preprocess the data, makes a training and test array,
